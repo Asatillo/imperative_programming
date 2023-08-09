@@ -1,0 +1,18 @@
+Base task
+Create a function named cartesian1() which produces the Cartesian product of sets. The sets are represented by arrays, The Cartesian product of sets A and B is the set of all pairs where the irst component comes from A and the second one comes from B: A⨯B = { (a,b) | a∊A ∧ b∊B }. For example for sets {1,2} and {4,5} the Cartesian product is {(1,4), (1,5), (2,4), (2,5)}.
+
+The function should have two input and one output parameter: the input parameters should be 10 element integer arrays, and the output parameter is a 100 element array containing pair objects. pair type is a record which contains two integers. You may assume that the input array elements are unique.
+
+Create three arrays in main() function with correct sizes and call the function. Test your program by printing the result.
+
+Modularization
+Separate the program to multiple translation units and a header file, so main() and the Cartesian product function are separated on file level. Use include guards. Don't use "hard-coded" values for array sizes in the program, but use preprocessor macros instead. Make sure that pair can be used as a type name, so pair p; is a valid variable declaration.
+
+Dynamic memory
+Create another function named cartesian2() that also computes Cartesian product of two sets. However, this should be able to determine the Cartesian product of arbitrary size arrays, not just 10. Furthermore, this function gets only the two input parameters and their sizes as parameter. The result should be returned as a return value. The size of this return value is the multiplication of the two input array sizes, and the caller is aware of this fact. Make sure to avoid memory leak.
+
+Filtering duplication
+Create a function called cartesian3() that differs from cartesian2() in that the output array contains each pair only once. For example, if the input is {1, 2} and {2, 2}, then the output is {(1, 2), (2, 2)}. If one of the input arrays contains duplicates, it will of course no longer be true that the number of the output array is a product of their size. Therefore, the size of the output array is returned to the caller via an additional pointer-type parameter.
+
+Standard input/output
+The elements of input arrays should be read from keyboard. Write the pairs of Cartesian product to a text file.
